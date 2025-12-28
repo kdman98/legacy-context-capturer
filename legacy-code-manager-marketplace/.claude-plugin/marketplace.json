@@ -1,0 +1,30 @@
+{
+  "name": "context-capturer-marketplace",
+  "owner": {
+    "name": "93",
+    "email": "your-email@example.com"
+  },
+  "metadata": {
+    "description": "Context Capturer - Capture tribal knowledge from legacy codebases",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "context-capturer",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/YOUR_USERNAME/context-capturer.git"
+      },
+      "description": "Multi-agent tool to capture tribal knowledge and generate CLAUDE.md context files",
+      "version": "1.0.0",
+      "keywords": [
+        "codebase-onboarding",
+        "legacy-code",
+        "documentation",
+        "multi-agent",
+        "context"
+      ],
+      "strict": true
+    }
+  ]
+}
