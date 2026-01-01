@@ -1,6 +1,9 @@
-# Context Capturer
+# Legacy Code Manager (Context Capturer)
 
 A Claude Code plugin that captures tribal knowledge from legacy codebases and developers, generating structured context files for AI coding assistants.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude%20Code-Plugin-blue)](https://github.com/kdman98/legacy-code-manager)
 
 ## The Problem
 
@@ -21,10 +24,10 @@ Context Capturer uses multiple specialized agents to:
 
 ```bash
 # Add the marketplace
-/plugin marketplace add 93/context-capturer-marketplace
+/plugin marketplace add kdman98/legacy-code-manager
 
 # Install the plugin
-/plugin install context-capturer
+/plugin install legacy-code-manager
 ```
 
 ## Usage
@@ -222,18 +225,64 @@ Uses callbacks + raw OkHttp (rest of codebase uses coroutines + Retrofit).
 
 | Flag | Description |
 |------|-------------|
-| `--skip-interview` | Skip interview, use code analysis only |
 | `--include-tests` | Include test files in scope |
 | `--depth N` | Dependency trace depth (default: 2) |
 | `--append` | Append to existing CLAUDE.md |
-| `--output DIR` | Custom output directory |
+
+## Troubleshooting
+
+### Plugin Not Found
+Ensure you've added the marketplace first:
+```bash
+/plugin marketplace add kdman98/legacy-code-manager
+```
+
+### Commands Not Working
+Verify the plugin is installed:
+```bash
+/plugin list
+```
+
+### Scope Resolution Issues
+If scoped capture isn't finding files:
+- Use exact file names first: `/capture "MyFile.kt"`
+- Check file paths are relative to repository root
+- Try broader queries: `/capture "payment service"`
+
+## Roadmap
+
+- [ ] Support for more programming languages
+- [ ] Integration with popular IDEs
+- [ ] Automated context file updates on git commits
+- [ ] Team collaboration features
+- [ ] Custom agent templates
 
 ## Contributing
 
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes:
+
 1. Fork the repository
-2. Create your feature branch
-3. Submit a pull request
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow the existing agent/command file structure
+- Include frontmatter (name, description) in all markdown files
+- Test your changes with real codebases
+- Update documentation for new features
+
+## Support
+
+- **Issues**: [GitHub Issues](https://github.com/kdman98/legacy-code-manager/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/kdman98/legacy-code-manager/discussions)
 
 ## License
 
-MIT
+MIT License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+
+Built for the Claude Code ecosystem to help teams capture and preserve critical codebase knowledge.

@@ -190,13 +190,8 @@ Traces downstream: PaymentService + all its dependencies.
 
 | Flag | Description |
 |------|-------------|
-| `--skip-interview` | Skip interview, use code analysis only |
 | `--include-tests` | Include test files in scope |
 | `--depth N` | Dependency trace depth (default: 2) |
-| `--upstream-only` | Only trace callers, not dependencies |
-| `--downstream-only` | Only trace dependencies, not callers |
-| `--output DIR` | Custom output directory |
-| `--format all` | Generate all output formats |
 | `--append` | Append to existing CLAUDE.md instead of creating scoped file |
 
 ## Output
